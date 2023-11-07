@@ -33,7 +33,7 @@ class Eporra():
         else:
             return False        
 
-    def darCarreras(self):
+    def dar_lista_carreras(self):
         carreras = [elem.__dict__ for elem in session.query(Carrera).all()]
         return carreras
 
