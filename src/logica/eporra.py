@@ -15,6 +15,7 @@ class Eporra():
     def agregar_carrera(self, nombre, competidores):
         #Se busca si hay una carrera con ese nombre
         busqueda= session.query(Carrera).filter(Carrera.nombre == nombre).all()
+        
         #Si no hay carrera con ese nombre entonces se procede a crear la carrera y si los competidores ingresados son más de uno
         if len(busqueda)==0 and len(competidores)>0:
             #Se calcula la probabilidad total de los competidores
