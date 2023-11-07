@@ -57,11 +57,6 @@ class Eporra():
     def darCompetidores():
         return None
 
-
-    def dar_lista_carreras(self):
-        carreras = [elem.__dict__ for elem in session.query(Carrera).all()]
-        return carreras
-
     def eliminar_carrera(self, carrera_id):
         try:
             carrera = session.query(Carrera).filter(Carrera.id == carrera_id).first()
