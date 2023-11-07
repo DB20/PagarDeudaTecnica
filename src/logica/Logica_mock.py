@@ -1,11 +1,12 @@
 '''
 Esta clase es tan sólo un mock con datos para probar la interfaz
 '''
+Carrera_1 = "Carrera"
 class Logica_mock():
-
+    
     def __init__(self):
         #Este constructor contiene los datos falsos para probar la interfaz
-        self.carreras = [{'Nombre':'Carrera 1', 'Competidores':[{'Nombre':'Juan Pablo Montoya', 'Probabilidad':0.15},\
+        self.carreras = [{'Nombre':Carrera_1, 'Competidores':[{'Nombre':'Juan Pablo Montoya', 'Probabilidad':0.15},\
                                                                  {'Nombre':'Kimi Räikkönen', 'Probabilidad':0.2},\
                                                                   {'Nombre':'Michael Schumacher', 'Probabilidad':0.65}],\
                                                     'Abierta':True},
@@ -15,11 +16,11 @@ class Logica_mock():
                                                                   {'Nombre':'Robson da Silva', 'Probabilidad':0.1}],\
                                                     'Abierta':True}]      
         self.apostadores = [{'Nombre':'Pepe Pérez'},{'Nombre':"Ana Andrade"},{'Nombre':"Aymara Castillo"}]
-        self.apuestas = [{'Apostador':'Pepe Pérez', 'Carrera':'Carrera 1', 'Valor':10, 'Competidor':'Juan Pablo Montoya'},\
-                        {'Apostador':'Ana Andrade', 'Carrera':'Carrera 1', 'Valor':25, 'Competidor':'Michael Schumacher'},\
-                        {'Apostador':'Aymara Castillo', 'Carrera':'Carrera 1', 'Valor':14, 'Competidor':'Juan Pablo Montoya'},\
+        self.apuestas = [{'Apostador':'Pepe Pérez', 'Carrera':Carrera_1, 'Valor':10, 'Competidor':'Juan Pablo Montoya'},\
+                        {'Apostador':'Ana Andrade', 'Carrera':Carrera_1, 'Valor':25, 'Competidor':'Michael Schumacher'},\
+                        {'Apostador':'Aymara Castillo', 'Carrera':Carrera_1, 'Valor':14, 'Competidor':'Juan Pablo Montoya'},\
                         {'Apostador':'Aymara Castillo', 'Carrera':'Carrera 2', 'Valor':45, 'Competidor':'Usain Bolt'}]
-        self.ganancias = [{'Carrera':'Carrera 1', 'Ganancias':[('Pepe Pérez',13),('Ana Andrade',0), ('Aymara Castillo',15)], 'Ganancias de la casa': 4},\
+        self.ganancias = [{'Carrera':Carrera_1, 'Ganancias':[('Pepe Pérez',13),('Ana Andrade',0), ('Aymara Castillo',15)], 'Ganancias de la casa': 4},\
             {'Carrera':'Carrera 2', 'Ganancias':[('Pepe Pérez',32),('Ana Andrade',12), ('Aymara Castillo',34)], 'Ganancias de la casa': -10}]
 
     def dar_carreras(self):
@@ -102,9 +103,8 @@ class Logica_mock():
                     id+=1
             i+=1
         
-        return False
-                
-
+            return False
+            
         del self.apuesta[id_apuesta]
 
     def dar_reporte_ganancias(self, id_carrera, id_competidor):

@@ -15,7 +15,7 @@ class Eporra():
     def agregar_carrera(self, nombre, competidores):
         #Se busca si hay una carrera con ese nombre
         busqueda= session.query(Carrera).filter(Carrera.nombre == nombre).all()
-        
+
         #Si no hay carrera con ese nombre entonces se procede a crear la carrera y si los competidores ingresados son más de uno
         if len(busqueda)==0 and len(competidores)>0:
             #Se calcula la probabilidad total de los competidores
@@ -33,8 +33,9 @@ class Eporra():
         else:
             return False        
 
-    def darCarreras():
-        return None
+    def darCarreras(self):
+        carreras = [elem.__dict__ for elem in session.query(Carrera).all()]
+        return carreras
 
     def agregar_competidor(self, nombre,probabilidad,carreraid):
         #Se busca si hay una carrera con ese nombre
@@ -70,5 +71,5 @@ class Eporra():
                 return True
             else:
                 return False
-        except:
+        except SystemExit:
             return False
